@@ -1,0 +1,11 @@
+services:
+  ml-pipeline:
+    build: .
+    container_name: pyspark_catboost_runner
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./src:/app/src
+    environment:
+      - SPARK_LOCAL_IP=127.0.0.1
+    shm_size: '2gb'

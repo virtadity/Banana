@@ -26,7 +26,7 @@ End-to-end ML-пайплайн для решения задачи бинарно
 │   ├── etl_pipeline.py     # Предобработка и генерация фичей на PySpark
 │   ├── train.py            # Обучение CatBoost и сохранение метаданных
 │   └── batch_predict.py    # Распределенный инференс через Pandas UDF
-├── Dockerfile              # Сборка окружения (Python 3.10 + OpenJDK 17 + PySpark + CatBoost)
+├── Dockerfile              # Сборка окружения (Python 3.11 + Java 21 JRE + PySpark + CatBoost)
 ├── docker-compose.yml      # Оркестрация запуска и проброс volumes
 ├── requirements.txt        # Зависимости проекта
 └── run_pipeline.sh         # Скрипт последовательного запуска всех этапов
@@ -54,4 +54,4 @@ docker compose run --rm ml-pipeline python src/batch_predict.py
 ## Технологический стек
 * **Data Processing:** PySpark, Apache Arrow, Parquet
 * **Machine Learning:** CatBoost, Scikit-learn, Pandas
-* **Infrastructure:** Docker, Docker Compose, OpenJDK 21
+* **Infrastructure:** Docker, Docker Compose, Java 21 JRE
